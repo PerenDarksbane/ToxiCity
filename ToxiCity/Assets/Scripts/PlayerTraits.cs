@@ -22,6 +22,7 @@ public class PlayerTraits : MonoBehaviour
 
     private Rigidbody2D rb2d;
     private bool jumpAllowed;
+    private int jumpCount = 2;
 
 
     // Use this for initialization
@@ -174,11 +175,19 @@ public class PlayerTraits : MonoBehaviour
         if (Mathf.Abs(rb2d.velocity.x) > maxSpeed)
             rb2d.velocity = new Vector2(Mathf.Sign(rb2d.velocity.x) * maxSpeed, rb2d.velocity.y);
 
+        if(jumpCount < 1)
+        {
+            jumpAllowed = false;
+        } else
+        {
+            jumpAllowed = true;
+        }
+
         if (jump)
         {
-            rb2d.AddForce(new Vector2(0f, jumpForce));
+            rb2d.AddRelativeForce(new Vector2(0f, jumpForce));
             jump = false;
-            jumpAllowed = false;
+            jumpCount--;
         }
     }
 
@@ -186,7 +195,7 @@ public class PlayerTraits : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground"))
         {
-            jumpAllowed = true;
+            jumpCount = 2;
         }
     }
 
