@@ -185,6 +185,7 @@ public class PlayerTraits : MonoBehaviour
 
         if (jump)
         {
+            rb2d.velocity = new Vector2(rb2d.velocity.x, 0);
             rb2d.AddRelativeForce(new Vector2(0f, jumpForce));
             jump = false;
             jumpCount--;
