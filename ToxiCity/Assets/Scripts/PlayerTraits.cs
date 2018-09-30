@@ -5,9 +5,7 @@ public class PlayerTraits : MonoBehaviour
 {
 
     [HideInInspector] public bool jump = false;
-    public float moveForce = 365f;
-    public float maxSpeed = 25f;
-    public float jumpForce = 3000f;
+    public float jumpForce;
     public GameObject attack;
     public string melee;
     public string ranged;
@@ -21,8 +19,10 @@ public class PlayerTraits : MonoBehaviour
 
 
     private Rigidbody2D rb2d;
+    private float moveForce = 200f;
+    private float maxSpeed = 35f;
     private bool jumpAllowed;
-    private int jumpCount = 2;
+    private int jumpCount = 1;
 
 
     // Use this for initialization
@@ -35,18 +35,26 @@ public class PlayerTraits : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            if (meleeMode == true)
-            {
-                meleeMode = false;
-            }
-            else
-            {
-                meleeMode = true;
-            }
+            maxSpeed = 35f;
+            moveForce = 300f;
         }
+        else
+        {
+            maxSpeed = 30f;
+            moveForce = 200f;
+        }
+
         playerPos = this.gameObject.transform.position;
+
+        if (Input.GetKey(KeyCode.LeftShift) && Mathf.Abs(rb2d.velocity.x) > (Mathf.Abs(maxSpeed - 10))) {
+            jumpForce = 4000;
+        } else {
+            jumpForce = 3000;
+        }
+        
+
 
         attackTimer--;
         if (combo > 0)
@@ -175,6 +183,7 @@ public class PlayerTraits : MonoBehaviour
         if (Mathf.Abs(rb2d.velocity.x) > maxSpeed)
             rb2d.velocity = new Vector2(Mathf.Sign(rb2d.velocity.x) * maxSpeed, rb2d.velocity.y);
 
+
         if(jumpCount < 1)
         {
             jumpAllowed = false;
@@ -196,7 +205,11 @@ public class PlayerTraits : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground"))
         {
-            jumpCount = 2;
+            jumpCount = 1;
+        }
+        if (other.gameObject.CompareTag("Ceiling"))
+        {
+            rb2d.velocity = new Vector2(0, -100);
         }
     }
 
