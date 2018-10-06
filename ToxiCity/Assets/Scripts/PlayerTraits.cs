@@ -19,7 +19,7 @@ public class PlayerTraits : MonoBehaviour
 
 
     private Rigidbody2D rb2d;
-    private float moveForce = 200f;
+    private float moveForce = 100f;
     private float maxSpeed = 35f;
     private bool jumpAllowed;
     private int jumpCount = 1;
@@ -209,7 +209,8 @@ public class PlayerTraits : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Ceiling"))
         {
-            rb2d.velocity = new Vector2(0, -100);
+            rb2d.velocity = new Vector2(0,-20);
+            jumpCount = 0;
         }
     }
 
