@@ -16,6 +16,8 @@ public class PlayerTraits : MonoBehaviour
     public string direction = "right";
     public float combo = 0;
     public float comboTime = 50f;
+    public float health = 5;
+    public bool yaded = false;
 
 
     private Rigidbody2D rb2d;
@@ -37,21 +39,26 @@ public class PlayerTraits : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            maxSpeed = 35f;
-            moveForce = 300f;
+            maxSpeed = 30f;
+            moveForce = 350f;
         }
         else
         {
-            maxSpeed = 30f;
-            moveForce = 200f;
+            maxSpeed = 25f;
+            moveForce = 300f;
         }
 
         playerPos = this.gameObject.transform.position;
 
         if (Input.GetKey(KeyCode.LeftShift) && Mathf.Abs(rb2d.velocity.x) > (Mathf.Abs(maxSpeed - 10))) {
-            jumpForce = 4000;
+            jumpForce = 2500;
         } else {
-            jumpForce = 3000;
+            jumpForce = 2000;
+        }
+
+        if (health <= 0)
+        {
+            yaded = true;
         }
         
 
@@ -212,6 +219,10 @@ public class PlayerTraits : MonoBehaviour
             rb2d.velocity = new Vector2(0,-20);
             jumpCount = 0;
         }
+        if (other.gameObject.CompareTag("EnemyHurt"))
+        {
+            health -= 2;
+        }
     }
 
     void Attack(GameObject attack, bool melee, float x, float y, float xscale, float yscale, float damage, float knockback, string effect, float time, float cooldown)
@@ -278,8 +289,6 @@ public class PlayerTraits : MonoBehaviour
 
                 attackTimer = cooldown;
             }
-
-
         }
     }
 }
