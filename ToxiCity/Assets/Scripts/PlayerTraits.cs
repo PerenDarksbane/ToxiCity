@@ -174,15 +174,15 @@ public class PlayerTraits : MonoBehaviour
 
         float h = Input.GetAxis("Horizontal");
 
-        if (h > 0)
-        {
-            direction = "right";
-        }
+		if (h > 0) 
+		{
+			direction = "right";
+		} 
 
-        if (h < 0)
-        {
-            direction = "left";
-        }
+		else if (h < 0) 
+		{
+			direction = "left";
+		} 
 
         if (h * rb2d.velocity.x < maxSpeed)
             rb2d.AddForce(Vector2.right * h * moveForce);
@@ -190,6 +190,9 @@ public class PlayerTraits : MonoBehaviour
         if (Mathf.Abs(rb2d.velocity.x) > maxSpeed)
             rb2d.velocity = new Vector2(Mathf.Sign(rb2d.velocity.x) * maxSpeed, rb2d.velocity.y);
 
+		/*if (Input.GetAxisRaw("Horizontal") == 0) {
+			rb2d.velocity = new Vector2(Mathf.Sign(0, rb2d.velocity.y);
+		}*/
 
         if(jumpCount < 1)
         {
