@@ -13,7 +13,7 @@ public class EnemyMelee : MonoBehaviour {
 	void Start () {
 		myTrans = this.transform;
 		myBody = this.GetComponent<Rigidbody2D> ();
-		SpriteRenderer mySprite = this.GetComponent<SpriteRenderer> ();
+		BoxCollider2D mySprite = this.GetComponent<BoxCollider2D> ();
 		myWidth = mySprite.bounds.extents.x;
 		myHeight = mySprite.bounds.extents.y;
 	}
@@ -25,17 +25,22 @@ public class EnemyMelee : MonoBehaviour {
 		Vector2 lineCastPos = myPosition - myRight * myWidth - Vector2.up*myHeight;
 		Debug.DrawLine (lineCastPos, lineCastPos + Vector2.down);
 		bool isGrounded = Physics2D.Linecast (lineCastPos, lineCastPos + Vector2.down, enemyMask);
-		bool isBlocked = Physics2D.Linecast (lineCastPos, lineCastPos - myRight*0.5f, enemyMask);
-		Debug.DrawLine (lineCastPos, lineCastPos - myRight*0.5f);
+		bool isBlocked = Physics2D.Linecast (lineCastPos, lineCastPos - myRight*1.4f, enemyMask);
+		Debug.DrawLine (lineCastPos, lineCastPos - myRight*1.4f);
 
-		if (!isGrounded||isBlocked) {
+
+		if (!isGrounded && myBody.velocity.y == 0||isBlocked) {
 			Vector3 currRot = myTrans.eulerAngles;
 			currRot.y += 180;
 			myTrans.eulerAngles = currRot;
 		}
 
 		Vector2 myVel = myBody.velocity;
+
 		myVel.x = -myTrans.right.x * speed;
+		if (!isGrounded && myBody.velocity.y != 0) {
+			myVel.x = 0;
+		}
 		myBody.velocity = myVel;
 	}
 }
