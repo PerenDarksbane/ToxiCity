@@ -8,7 +8,8 @@ public class EnemyMelee : MonoBehaviour {
 	Rigidbody2D myBody;
 	Transform myTrans;
 	float myWidth, myHeight;
-
+	public bool isGrounded;
+	public bool isBlocked;
 	// Use this for initialization
 	void Start () {
 		myTrans = this.transform;
@@ -23,10 +24,10 @@ public class EnemyMelee : MonoBehaviour {
 		Vector2 myPosition = myTrans.position;
 		Vector2 myRight = myTrans.right;
 		Vector2 lineCastPos = myPosition - myRight * myWidth - Vector2.up*myHeight;
-		Debug.DrawLine (lineCastPos, lineCastPos + Vector2.down);
-		bool isGrounded = Physics2D.Linecast (lineCastPos, lineCastPos + Vector2.down, enemyMask);
-		bool isBlocked = Physics2D.Linecast (lineCastPos, lineCastPos - myRight*1.4f, enemyMask);
-		Debug.DrawLine (lineCastPos, lineCastPos - myRight*1.4f);
+		Debug.DrawLine (lineCastPos+ Vector2.down*0.1f, lineCastPos + Vector2.down);
+		isGrounded = Physics2D.Linecast (lineCastPos+ Vector2.down*0.1f, lineCastPos + Vector2.down, enemyMask);
+		isBlocked = Physics2D.Linecast (lineCastPos + Vector2.up*myHeight*0.1f - myRight, lineCastPos - myRight*1.4f + Vector2.up*myHeight*0.1f, enemyMask);
+		Debug.DrawLine (lineCastPos + Vector2.up*myHeight*0.1f - myRight, lineCastPos - myRight*1.4f + Vector2.up*myHeight*0.1f);
 
 
 		if (!isGrounded && myBody.velocity.y == 0||isBlocked) {

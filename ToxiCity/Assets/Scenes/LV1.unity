@@ -1926,7 +1926,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
       propertyPath: m_RootOrder
-      value: 21
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1219325114355302, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
       propertyPath: m_Name
@@ -6080,6 +6080,52 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &952753064
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 135.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1005.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219325114355302, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
+      propertyPath: m_Name
+      value: enemymelee (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &953687050
 GameObject:
   m_ObjectHideFlags: 0
@@ -7763,52 +7809,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1001 &1230195436
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 822.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -980.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
-      propertyPath: m_RootOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1219325114355302, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
-      propertyPath: m_Name
-      value: enemymelee (5)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1245350526
 GameObject:
   m_ObjectHideFlags: 0
@@ -10752,57 +10752,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1001 &1646012507
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 4.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -1004.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4111249328816644, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
-      propertyPath: m_RootOrder
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 1219325114355302, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
-      propertyPath: m_Name
-      value: enemymelee (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114223399452551836, guid: 16750ed8374932f4db0d7d4645164477,
-        type: 2}
-      propertyPath: enemyMask.m_Bits
-      value: 4294967039
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 16750ed8374932f4db0d7d4645164477, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1660913432
 GameObject:
   m_ObjectHideFlags: 0
