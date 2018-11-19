@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\autoaim.cs" />
      <Compile Include="Assets\Scripts\CameraTracking.cs" />
+     <Compile Include="Assets\Scripts\EnemyAerial.cs" />
      <Compile Include="Assets\Scripts\EnemyMelee.cs" />
      <Compile Include="Assets\Scripts\EnemyTraits.cs" />
      <Compile Include="Assets\Scripts\PlayerHurtboxTraits.cs" />
