@@ -25,7 +25,7 @@ public class PlayerTraits : MonoBehaviour
     private float maxSpeed = 35f;
     private bool jumpAllowed;
     private int jumpCount = 1;
-
+	private string dwas = "right";
 
     // Use this for initialization
     void Start()
@@ -183,6 +183,13 @@ public class PlayerTraits : MonoBehaviour
 		{
 			direction = "left";
 		} 
+
+		if (dwas != direction) {
+			Vector3 currRot = this.transform.eulerAngles;
+			currRot.y += 180;
+			this.transform.eulerAngles = currRot;
+		}
+		dwas = direction;
 
         if (h * rb2d.velocity.x < maxSpeed)
             rb2d.AddForce(Vector2.right * h * moveForce);
