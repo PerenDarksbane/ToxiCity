@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHurtboxTraits : MonoBehaviour {
-	
-	public float xscale;
+
+    public bool melee;
+    public float speed = 10;
+    public float xscale;
 	public float yscale;
 	public float damage;
 	public float knockback;
@@ -29,8 +31,16 @@ public class PlayerHurtboxTraits : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		this.transform.position = displacePos + player.transform.position;
-		this.transform.localScale = scale;
+        if (melee)
+        {
+            this.transform.position = displacePos + player.transform.position;
+            this.transform.localScale = scale;
+        }
+        else
+        {
+            this.transform.position = new Vector3(transform.position.x + 10, transform.position.y, transform.position.z);
+        }
+
 
 		if (time <= 0) {
 			Destroy(this.gameObject);

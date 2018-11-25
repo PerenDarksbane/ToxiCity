@@ -85,14 +85,8 @@ public class PlayerTraits : MonoBehaviour
                 switch (ranged)
                 {
 
-                    case ("Bow"):
-                        break;
-
-                    case ("Throwing Star"):
-
-                        break;
-
                     default:
+                        Attack(attack, false, 6, 0, 3f, 0.5f, 20f, 1, "", 30, 50);
                         break;
 
                 }
@@ -245,6 +239,7 @@ public class PlayerTraits : MonoBehaviour
                 var obj = Instantiate(attack, pos, transform.rotation);
                 var trait = obj.GetComponent<PlayerHurtboxTraits>();
                 trait.damage = damage;
+                trait.melee = true;
                 trait.knockback = knockback;
                 trait.effect = effect;
                 trait.time = time;
@@ -259,6 +254,7 @@ public class PlayerTraits : MonoBehaviour
                 var obj = Instantiate(attack, pos, transform.rotation);
                 var trait = obj.GetComponent<PlayerHurtboxTraits>();
                 trait.damage = damage;
+                trait.melee = true;
                 trait.knockback = knockback;
                 trait.effect = effect;
                 trait.time = time;
@@ -276,6 +272,7 @@ public class PlayerTraits : MonoBehaviour
                 var obj = Instantiate(attack, pos, transform.rotation);
                 var trait = obj.GetComponent<PlayerHurtboxTraits>();
                 trait.damage = damage;
+                trait.melee = false;
                 trait.knockback = knockback;
                 trait.effect = effect;
                 trait.time = time;
@@ -291,6 +288,7 @@ public class PlayerTraits : MonoBehaviour
                 var obj = Instantiate(attack, pos, transform.rotation);
                 var trait = obj.GetComponent<PlayerHurtboxTraits>();
                 trait.damage = damage;
+                trait.melee = false;
                 trait.knockback = knockback;
                 trait.effect = effect;
                 trait.time = time;
