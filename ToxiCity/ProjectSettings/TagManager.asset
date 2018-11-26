@@ -8,6 +8,7 @@ TagManager:
   - EnemyHurt
   - Ceiling
   - Coin
+  - GameMaster
   layers:
   - Default
   - TransparentFX
